@@ -1,0 +1,51 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Invoice Correction API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/generate-invoice/": {
+      "post": {
+        "summary": "Generate corrected invoice from two images",
+        "operationId": "generateInvoice",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cropped": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "Cropped invoice image"
+                  },
+                  "full": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "Full invoice image"
+                  }
+                },
+                "required": ["cropped", "full"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Corrected invoice PDF",
+            "content": {
+              "application/pdf": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
