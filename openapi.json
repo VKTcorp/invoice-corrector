@@ -4,10 +4,10 @@
     "title": "Invoice Correction API",
     "version": "1.0.0"
   },
- "servers": [
-  {
-    "url": "https://invoice-corrector.onrender.com",
-    "description": "Production server on Render"
+  "servers": [
+    {
+      "url": "https://invoice-corrector.onrender.com",
+      "description": "Render deployment"
     }
   ],
   "paths": {
@@ -25,12 +25,12 @@
                   "cropped": {
                     "type": "string",
                     "format": "binary",
-                    "description": "Cropped invoice image"
+                    "description": "The cropped invoice layout image file"
                   },
                   "full": {
                     "type": "string",
                     "format": "binary",
-                    "description": "Full invoice image"
+                    "description": "The full invoice reference image file"
                   }
                 },
                 "required": ["cropped", "full"]
@@ -55,5 +55,3 @@
     }
   }
 }
-
-
