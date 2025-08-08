@@ -4,6 +4,12 @@
     "title": "Invoice Correction API",
     "version": "1.0.0"
   },
+  "servers": [
+    {
+      "url": "https://invoice-corrector.onrender.com",
+      "description": "Render deployment"
+    }
+  ],
   "paths": {
     "/generate-invoice/": {
       "post": {
